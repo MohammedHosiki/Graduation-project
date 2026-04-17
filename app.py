@@ -30,12 +30,26 @@ districts = load_districts()
 feature_columns = load_feature_columns()
 
 # --- Header ---
-col_logo, col_title = st.columns([1, 4])
-with col_logo:
-    st.image("logo.png", width=220)
-with col_title:
-    st.title("Jeddah Real Estate Rental Price Predictor")
-    st.markdown("Enter property details below to get an estimated monthly rental price.")
+st.markdown(
+    """
+    <div style="
+        background-color: #1a3c2e;
+        padding: 20px 30px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+    ">
+        <img src="data:image/png;base64,{logo_b64}" style="height: 80px;">
+        <div>
+            <h1 style="color: white; margin: 0; font-size: 1.8em;">Jeddah Real Estate Rental Price Predictor</h1>
+            <p style="color: #cce8d4; margin: 4px 0 0 0;">King Abdulaziz University — Graduation Project</p>
+        </div>
+    </div>
+    """.replace("{logo_b64}", __import__('base64').b64encode(open('logo.png','rb').read()).decode()),
+    unsafe_allow_html=True
+)
 st.divider()
 
 # --- Input Form ---
