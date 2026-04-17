@@ -32,7 +32,7 @@ feature_columns = load_feature_columns()
 # --- Header ---
 col_logo, col_title = st.columns([1, 4])
 with col_logo:
-    st.image("logo.png", width=120)
+    st.image("logo.png", width=220)
 with col_title:
     st.title("Jeddah Real Estate Rental Price Predictor")
     st.markdown("Enter property details below to get an estimated monthly rental price.")
